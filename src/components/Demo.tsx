@@ -1,5 +1,5 @@
 "use client";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
   getAssociatedTokenAddress,
   createAssociatedTokenAccountInstruction,
@@ -338,7 +338,7 @@ export default function Demo(
             >
               ➤
             </span>
-            Tap to expand
+            Tap to expand!
           </button>
 
           {isContextOpen && (
