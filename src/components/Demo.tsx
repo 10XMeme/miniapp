@@ -1,4 +1,6 @@
 "use client";
+import { CSSProperties } from 'react';
+
 import {
   getAssociatedTokenAddress,
   createAssociatedTokenAccountInstruction,
@@ -61,6 +63,16 @@ function safeJsonStringify(obj: unknown) {
 export default function Demo(
   { title }: { title?: string } = { title: "Frames v2 Demo" }
 ) {
+  const iframeStyle: CSSProperties = {
+    width: '500px',
+    height: '50px',
+    margin: '0',
+    borderRadius: '0px 0px 0px 0px !important',
+    backgroundColor: 'transparent',
+    boxShadow: '0 0 #0000',
+    maxWidth: '100%'
+  };
+
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const [context, setContext] = useState<Context.MiniAppContext>();
   const [token, setToken] = useState<string | null>(null);
@@ -134,7 +146,7 @@ export default function Demo(
     const load = async () => {
       const context = await sdk.context;
       setContext(context);
-      setAdded(context.client.added);
+      setAdded(context?.client.added);
 
       sdk.on("miniAppAdded", ({ notificationDetails }) => {
         setLastEvent(
@@ -348,6 +360,9 @@ export default function Demo(
             </div>
           )}
         </div>
+
+        <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+        <iframe src={`https://subscribe-forms.beehiiv.com/cd455c23-f3ff-4cd3-8c7f-81b5d3ec7d10?utm_source=${encodeURIComponent(context?.user.fid ? context?.user.fid : '')}&utm_medium=${encodeURIComponent(context?.user.username ? context?.user.username : '')}&utm_campaign=${encodeURIComponent(context?.user.displayName ? context?.user.displayName : '')}&referrer=${encodeURIComponent(address ? address : '')}`} className="beehiiv-embed" data-test-id="beehiiv-embed" frameBorder="0" scrolling="no" style={ iframeStyle }></iframe>
 
         <div>
           <h2 className="font-2xl font-bold">Actions</h2>
