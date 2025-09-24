@@ -1,4 +1,6 @@
-# 💎 10X.meme Mini App
+# 💎 10X.MEME Mini App
+
+[👉 APP.10X.MEME](https://app.10x.meme)
 
 > [!NOTE]
 > Forked from Farcaster Frames v2 demo app: https://github.com/farcasterxyz/frames-v2-demo
