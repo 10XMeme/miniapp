@@ -1,6 +1,7 @@
+# 💎 10X.meme Mini App
+
 > [!NOTE]
 > Forked from Farcaster Frames v2 demo app: https://github.com/farcasterxyz/frames-v2-demo
-> Modified to become 10X.meme Mini App.
 
 # 🖼️ frames-v2-demo
 
